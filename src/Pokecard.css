@@ -9,10 +9,12 @@
 
 .Pokecard-name {
     color: blue;
+    font-weight: bold;
     text-align: center;
 }
 
 .Pokecard-img {
+    display: block;
     align-content: center;
 }
 

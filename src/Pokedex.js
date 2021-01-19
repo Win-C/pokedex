@@ -5,18 +5,20 @@ const BASE_IMAGE_URL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master
 
 /** Renders a sequence of Pokecard components
  *  Takes in an array of objects describing different pokemon
+ *  
+ *  Example: pokemon = [{id: 4, name: 'Charmander', type: 'fire', base_experience: 62}, ...]
 */
 
 function Pokedex({ pokemon }){
   return (
     <div className="Pokedex">
       <h1 className="Pokedex-title">Pokedex</h1>
-      <div className="Pokedex-cards">{ pokemon.map(p => 
+      <div className="Pokedex-cards">{ pokemon.map(({ name, id, type, base_experience }) =>
         <Pokecard
-          name = { p.name }
-          image = { BASE_IMAGE_URL+p.id+'.png' }
-          type = { p.type }
-          baseExp = { p.base_experience }
+          name = { name }
+          image = { BASE_IMAGE_URL+id+'.png' } // Comment: can also use template string
+          type = { type }
+          baseExp = { base_experience }
         />)}
         </div>
     </div>
