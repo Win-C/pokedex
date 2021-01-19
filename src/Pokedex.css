@@ -1,0 +1,14 @@
+.Pokedex {
+    background-color: white;
+    text-align: center;
+    display:inline-block;
+  }
+
+.Pokedex-title {
+    color: darkgrey;
+    font-weight: bold;
+}
+
+.Pokedex-title {
+    display:inline-block;
+}
