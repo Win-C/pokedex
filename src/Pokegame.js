@@ -36,7 +36,7 @@ function createHands(pokemon) {
   let hand2 = [];
 
   for (let i = 0; i < (pokemon.length / 2); i++) {
-    let randomIdx = Math.floor(Math.random * hand1.length);
+    let randomIdx = Math.floor(Math.random() * hand1.length);
 
     let randomPokemon = hand1.splice(randomIdx, 1);
     hand2.push(randomPokemon[0]);
