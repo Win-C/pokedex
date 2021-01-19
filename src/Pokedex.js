@@ -9,10 +9,12 @@ const BASE_IMAGE_URL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master
  *  Example: pokemon = [{id: 4, name: 'Charmander', type: 'fire', base_experience: 62}, ...]
 */
 
-function Pokedex({ pokemon }){
+function Pokedex({pokemon, totalExp, isWinner}){
+  
+  
   return (
     <div className="Pokedex">
-      <h1 className="Pokedex-title">Pokedex</h1>
+      <h4 className="Pokedex-title">Your Pokemon</h4>
       <div className="Pokedex-cards">{ pokemon.map(({ name, id, type, base_experience }) =>
         <Pokecard
           name = { name }
@@ -21,22 +23,11 @@ function Pokedex({ pokemon }){
           baseExp = { base_experience }
         />)}
         </div>
+      <h3>Total Experience: {totalExp}</h3>
+      <h3>{ isWinner ? "THIS HAND WINS!" : null}</h3>
+
     </div>
   );
 }
-
-Pokedex.defaultProps = {
-  pokemon:
-  [
-    {id: 4,   name: 'Charmander', type: 'fire',     base_experience: 62},
-    {id: 7,   name: 'Squirtle',   type: 'water',    base_experience: 63},
-    {id: 11,  name: 'Metapod',    type: 'bug',      base_experience: 72},
-    {id: 12,  name: 'Butterfree', type: 'flying',   base_experience: 178},
-    {id: 25,  name: 'Pikachu',    type: 'electric', base_experience: 112},
-    {id: 39,  name: 'Jigglypuff', type: 'normal',   base_experience: 95},
-    {id: 94,  name: 'Gengar',     type: 'poison',   base_experience: 225},
-    {id: 133, name: 'Eevee',      type: 'normal',   base_experience: 65}
-  ]
-};
 
 export default Pokedex; 
